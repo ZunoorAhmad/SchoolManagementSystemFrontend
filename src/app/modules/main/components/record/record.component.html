@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div class="container my-5">
+    <div *ngIf="userTrades.length > 0">
+        <h4>Your Trade History</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Amount (INR)</th>
+                    <th>Trade Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let trade of userTrades">
+                    <td>{{ trade.outcome }}</td>
+                    <td>₹{{ trade.trade_amount}}</td>
+                    <td>{{ trade.trade_type }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="!userTrades.length">
+        <h4>No Trades Yet</h4>
+    </div>
+</div>
