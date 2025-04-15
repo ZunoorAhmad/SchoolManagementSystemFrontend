@@ -1,0 +1,11 @@
+:host {
+    display: block;
+}
+
+.p-progressspinner {
+    position: relative;
+}
+
+.p-chart {
+    width: 100%;
+}
