@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="p-4">
+    <!-- Welcome Card -->
+    <p-card class="mb-4">
+        <div class="flex justify-content-between items-center">
+            <div>
+                <h1 class="text-xl font-bold">Welcome to School Dashboard</h1>
+                <p>Overview of school activities and performance</p>
+            </div>
+            <div>
+                <button pButton type="button" label="Student Listing" class="p-button-success rounded"
+                (click)="globalService.goToPage('/main/students-listing')"></button>
+            </div>
+        </div>
+    </p-card>
+
+    <!-- Statistic Cards -->
+    <div class="grid grid-cols-3 gap-4 mb-4">
+        <p-card *ngFor="let stat of stats" class="text-center">
+            <div class="flex flex-col items-center">
+                <i [class]="stat.icon" class="text-2xl mb-2"></i>
+                <h2 class="text-lg font-semibold">{{ stat.value }}</h2>
+                <p>{{ stat.label }}</p>
+            </div>
+        </p-card>
+    </div>
+
+    <!-- Chart and Progress Section -->
+    <div class="grid grid-cols-2 gap-4">
+        <!-- Bar Chart -->
+        <p-card>
+            <h2 class="text-lg font-semibold mb-2">Student Performance</h2>
+            <p-chart type="bar" [data]="performanceData" [options]="chartOptions" height="200px"></p-chart>
+        </p-card>
+
+        <!-- Circular Progress -->
+        <p-card class="flex flex-col items-center">
+            <h2 class="text-lg font-semibold mb-2">School Rating</h2>
+            <p-progressSpinner strokeWidth="8" styleClass="w-24 h-24">
+                <span class="absolute text-xl font-bold top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">{{
+                    schoolRating }}%</span>
+            </p-progressSpinner>
+            <p class="mt-2">Overall Performance</p>
+        </p-card>
+    </div>
+</div>

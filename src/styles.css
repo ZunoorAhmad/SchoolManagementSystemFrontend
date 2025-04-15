@@ -1,0 +1,37 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+.navbar {
+    position: sticky;
+    top: 0;
+}
+
+.color-bright{
+    color: white;
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        top: auto;
+        z-index: 1030;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .nav-item {
+        flex: 1;
+        text-align: center;
+    }
+
+    body {
+        padding-bottom: 56px;
+    }
+}
